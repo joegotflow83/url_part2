@@ -18,6 +18,7 @@ class URL(models.Model):
     url = models.URLField()
     short = models.CharField(max_length=255, default=random_url())
     description = models.CharField(max_length=255, blank=True)
+    private = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
 
     @property

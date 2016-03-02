@@ -10,7 +10,7 @@ from .models import URL, Click
 class Converter(CreateView):
 
     model = URL
-    fields = ['url', 'short', 'description']
+    fields = ['url', 'short', 'description', 'private']
 
     def form_valid(self, form):
         """Validate the form"""
