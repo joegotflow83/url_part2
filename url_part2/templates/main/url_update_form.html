@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Form{% endblock title %}
+
+{% block content %}
+
+<h2 class="center-align">Update your url</h2>
+<form method="post" action="">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="Update!" class="waves-effect waves-light btn">
+</form>
+
+{% endblock %}

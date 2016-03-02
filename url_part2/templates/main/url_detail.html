@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ object.short }}{% endblock %}
+
+{% block content %}
+
+<h3>Username: {{ object.user.username }}</h3>
+<p>Original URL: {{ object.url }}</p>
+<p>Short Code: <a href="{% url 'url_redirect' object.short%}">{{ object.short }}</a></p>
+<p>Description: {{ object.description }}</p>
+<em>Created: {{ object.created }}</em>
+<p>Times Clicked: {{ object.count }}</p>
+<br>
+<a href="{% url 'url_list' %}" class="waves-effect waves-light btn">Go Back</a>
+
+{% endblock %}

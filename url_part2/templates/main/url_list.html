@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}URL List{% endblock title %}
+
+{% block content %}
+
+<h2>Check Out Everyones URLs</h2>
+<br>
+{% for url in object_list %}
+<h5>User: {{ url.user.username }}</h5>
+  <p>New Cool URL: <a href="{% url 'url_detail' url.id %}">{{ url.short }}</a></p>
+  <a href="{% url 'update_url' url.id %}" class="waves-effect waves-light btn">Update URL</a>
+  <br>
+  <br>
+{% endfor %}
+
+{% endblock %}

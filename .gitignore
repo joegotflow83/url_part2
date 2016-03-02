@@ -1,0 +1,5 @@
+url_env/
+*.pyc
+.DS__Store
+url_part2/.DS_Store
+url_part2/db.sqlite3
