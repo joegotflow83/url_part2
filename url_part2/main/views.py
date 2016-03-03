@@ -7,6 +7,14 @@ from django.contrib.auth.models import User
 from .models import URL, Click
 
 
+class Home(View):
+
+
+    def get(self, request):
+        """Redirect users to login"""
+        return redirect(reverse('login'))
+
+
 class Converter(CreateView):
 
     model = URL

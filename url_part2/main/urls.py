@@ -5,6 +5,7 @@ from main import views
 
 
 urlpatterns = [
+    url(r'^$', views.Home.as_view()),
     url(r'^converter/$', login_required(views.Converter.as_view()), name='converter'),
     url(r'^url_list/$', login_required(views.URLList.as_view()), name='url_list'),
     url(r'^url_list/(?P<pk>\d+)/$', login_required(views.URLDetail.as_view()), name='url_detail'),
