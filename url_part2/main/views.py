@@ -9,7 +9,6 @@ from .models import URL, Click
 
 class Home(View):
 
-
     def get(self, request):
         """Redirect users to login"""
         return redirect(reverse('login'))
@@ -56,15 +55,9 @@ class URLList(ListView):
     model = URL
 
 
-class URLDetail(DetailView):
+class URLDetail(DetailView)
 
-    model = URL
-
-    def get_object(self):
-        """Update count when user clicks on link"""
-        object = super().get_object()
-        Click.objects.create(bookmark=object)
-        return object
+    model URL
 
 
 class URLRedirect(View):
@@ -72,6 +65,7 @@ class URLRedirect(View):
     def get(self, request, url):
         """Redirect a user to their desired link from their new url"""
         new_url = get_object_or_404(URL, short=url)
+        Click.objects.create(bookmark=new_url)
         return redirect(new_url.url)
 
 
